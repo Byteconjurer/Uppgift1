@@ -22,8 +22,8 @@ export default function Layout() {
         <Drawer.Screen
           name="compass"
           options={{
-            drawerLabel: 'Kompass',
-            title: 'Kompass',
+            drawerLabel: 'Compass',
+            title: 'Come pass',
           }}
         />
         <Drawer.Screen
@@ -31,6 +31,20 @@ export default function Layout() {
           options={{
             drawerLabel: 'Device Info',
             title: 'Device Information',
+          }}
+        />
+        <Drawer.Screen
+          name="secretsecrets"
+          options={{
+            drawerLabel: 'Half Life 3 Release Date',
+            title: 'Congratulations! Easter Egg!',
+          }}
+        />
+        <Drawer.Screen
+          name="joke"
+          options={{
+            drawerLabel: 'A Random Joke',
+            title: 'Haahaahaaha1!!1!',
           }}
         />
       </Drawer>
