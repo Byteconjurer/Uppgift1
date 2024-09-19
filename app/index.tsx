@@ -1,30 +1,41 @@
 import { useRef, useEffect } from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import LottieView from 'lottie-react-native';
 
 export default function Index() {
-  const animation = useRef<LottieView>(null);
+  const animation1 = useRef<LottieView>(null);
+  const animation2 = useRef<LottieView>(null);
+
   useEffect(() => {
-    animation.current?.play();
+    // Play both animations independently
+    animation1.current?.play();
+    animation2.current?.play();
   }, []);
 
-  const image = require('../assets/fire-flame.png');
   return (
-
     <View style={styles.animationContainer}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       <LottieView
         loop
-        ref={animation}
+        ref={animation1}
         style={{
-          width: 370,
-          height: 370,
+          width: 740,
+          height: 740,
+          position: 'absolute',
+          left: -180,
+          top: 25,
+        }}
+        source={require('../assets/lottieFireRing.json')}
+      />
+      <LottieView
+        loop
+        ref={animation2}
+        style={{
+          width: 350,
+          height: 350,
         }}
         source={require('../assets/lottieHomeAnimation.json')}
       />
-    </ImageBackground>
     </View >
-  
   );
 }
 
@@ -33,10 +44,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
-  },
-  image: {
-    flex: 1,
-    justifyContent: 'center',
   },
   buttonContainer: {
     paddingTop: 20,
