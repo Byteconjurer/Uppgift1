@@ -41,6 +41,6 @@ ConfettiCannon
 
 Alla.
 
-*Appen hämtar skämt från https://v2.jokeapi.dev/joke/Any?format=txt
-*Appen går att ladda ner från: https://expo.dev/artifacts/eas/oZf3ebc5ex9RbojyraqYmX.apk
+* Appen hämtar skämt från https://v2.jokeapi.dev/joke/Any?format=txt
+* Appen går att ladda ner från: https://expo.dev/artifacts/eas/oZf3ebc5ex9RbojyraqYmX.apk
 
