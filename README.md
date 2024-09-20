@@ -15,19 +15,23 @@ Appen använder Expos filbaserade routing och är en Kamera/Skämtgenerator/Komp
 
 ## Inkluderade Komponenter
 ### Expo
-Camera
-Device
-Lottie
-Magnetometer
-Video(expo-av)
-Drawer
+|    |
+|----|
+|Camera|
+|Device|
+|Lottie|
+|Magnetometer|
+|Video(expo-av)|
+|Drawer|
 
-### React
-Text
-View
-Button
-ImageBackground
-StyleSheet
+### React Native
+|    |
+|----|
+|Text|
+|View|
+|Button|
+|ImageBackground|
+|StyleSheet|
 
 ### Andra (VG)
 ConfettiCannon
