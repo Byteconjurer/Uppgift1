@@ -19,8 +19,8 @@ export default function Camera() {
     return (
       <View style={styles.container}>
         <Text style={styles.message}>Får vi filma?</Text>
-        <Text style={styles.message}>Försök filma QR kod</Text>
         <Button onPress={requestPermission} title="grant permission" />
+        <Text style={styles.message}>Försök filma QR kod</Text>
       </View>
     );
   }
@@ -64,6 +64,8 @@ const styles = StyleSheet.create({
   },
   message: {
     textAlign: 'center',
+    fontSize: 24,
+    padding: 20,
   },
   camera: {
     flex: 1,
