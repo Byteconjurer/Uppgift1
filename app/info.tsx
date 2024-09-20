@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, ImageBackground } from 'react-native';
+import { Text, StyleSheet, ImageBackground } from 'react-native';
 import * as Device from 'expo-device';
 
 const image = require('../assets/fire-flame.png');

@@ -8,10 +8,10 @@ export default function Joke() {
     const [confetti, setConfetti] = useState(false); // State to control confetti
     const jokeUrl = 'https://v2.jokeapi.dev/joke/Any?format=txt';
 
-    const fetchJoke = () => {
+    const fetchJoke = async () => {
         setJoke('');
         setConfetti(false);
-        fetch(jokeUrl)
+        await fetch(jokeUrl)
             .then(response => response.text())
             .then(jokeText => {
                 setJoke(jokeText);
