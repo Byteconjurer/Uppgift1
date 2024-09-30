@@ -5,7 +5,7 @@ import LottieView from 'lottie-react-native';
 
 export default function Joke() {
     const [joke, setJoke] = useState('Loading...');
-    const [confetti, setConfetti] = useState(false); // State to control confetti
+    const [confetti, setConfetti] = useState(false);
     const jokeUrl = 'https://v2.jokeapi.dev/joke/Any?format=txt';
 
     const fetchJoke = async () => {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Text, StyleSheet, ImageBackground } from 'react-native';
 import * as Device from 'expo-device';
 

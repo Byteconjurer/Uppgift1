@@ -1,3 +1,4 @@
+import React from 'react';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { Link } from 'expo-router';
 import { useState } from 'react';
