@@ -1,10 +1,14 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
+import { Text } from 'react-native-paper';
 import LottieView from 'lottie-react-native';
 
 export default function Index() {
   const animation1 = useRef<LottieView>(null);
   const animation2 = useRef<LottieView>(null);
+  const [showText, setShowText] = useState(false);
+ 
+  setTimeout(() => { setShowText(true) }, 3000);
 
   useEffect(() => {
     // Play both animations independently
@@ -14,6 +18,7 @@ export default function Index() {
 
   return (
     <View style={styles.animationContainer}>
+      {showText && <Text style={{ fontSize: 34, fontWeight: 'bold', position: 'static', top: -270 }}>Häftigt!</Text>}
       <LottieView
         loop
         ref={animation1}
@@ -22,7 +27,7 @@ export default function Index() {
           height: 740,
           position: 'absolute',
           left: -180,
-          top: 25,
+          top: 45,
         }}
         source={require('../assets/lottieFireRing.json')}
       />
@@ -30,8 +35,11 @@ export default function Index() {
         loop
         ref={animation2}
         style={{
-          width: 350,
-          height: 350,
+          width: 300,
+          height: 300,
+          position: 'absolute',
+          left: 55,
+          top: 260,
         }}
         source={require('../assets/lottieHomeAnimation.json')}
       />
