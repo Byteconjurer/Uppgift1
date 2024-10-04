@@ -39,7 +39,11 @@ export default function Joke() {
     };
 
     useEffect(() => {
-        fetchJoke();
+        const fetchJokeAsync = async () => {
+            await fetchJoke();
+        };
+        
+        fetchJokeAsync();
 
         // Cleanup sound when the component unmounts
         return () => {

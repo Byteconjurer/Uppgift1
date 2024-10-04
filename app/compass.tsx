@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { View, StyleSheet, Button, PanResponder } from 'react-native';
 import { Magnetometer } from 'expo-sensors';
-import { MovingAverage } from './MovingAverage';
+import { MovingAverage } from '../utility/MovingAverage';
 import LottieView from 'lottie-react-native';
 import { useIsFocused } from '@react-navigation/native';
 import { Text } from 'react-native-paper';
