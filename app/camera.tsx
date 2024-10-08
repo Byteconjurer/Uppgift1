@@ -2,7 +2,8 @@ import React from 'react';
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera';
 import { Link } from 'expo-router';
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Text } from 'react-native-paper';
 
 export default function Camera() {
   const [facing, setFacing] = useState<CameraType>('back');
@@ -20,7 +21,7 @@ export default function Camera() {
     return (
       <View style={styles.container}>
         <Text style={styles.message}>Får vi filma?</Text>
-        <Button onPress={requestPermission} title="grant permission" />
+        <Button onPress={requestPermission} title="Ja, ni får filma" />
         <Text style={styles.message}>Försök filma QR kod</Text>
       </View>
     );

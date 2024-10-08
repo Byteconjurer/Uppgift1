@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, StyleSheet, Button } from 'react-native';
+import { Text } from 'react-native-paper';
 import ConfettiCannon from 'react-native-confetti-cannon';
 import LottieView from 'lottie-react-native';
+import { Audio } from 'expo-av';
 
 export default function Joke() {
     const [joke, setJoke] = useState('Loading...');
     const [confetti, setConfetti] = useState(false);
-    const jokeUrl = 'https://v2.jokeapi.dev/joke/Any?format=txt';
+    const [sound, setSound] = useState<Audio.Sound | null>(null);
+    const jokeUrl = 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=racist&format=txt';
 
     const fetchJoke = async () => {
         setJoke('');
@@ -15,15 +18,40 @@ export default function Joke() {
             .then(response => response.text())
             .then(jokeText => {
                 setJoke(jokeText);
-                setConfetti(true); 
+                setConfetti(true); // Trigger confetti
+                playSound();       // Play the sound after confetti
             })
             .catch(error => {
                 setJoke('Error: ' + error);
             });
     };
 
+    const playSound = async () => {
+        try {
+            const { sound } = await Audio.Sound.createAsync(
+                require('../assets/badumtss.mp3')
+            );
+            setSound(sound);
+            await sound.playAsync();
+        } catch (error) {
+            console.log('Error playing sound', error);
+        }
+    };
+
     useEffect(() => {
-        fetchJoke();
+        const fetchJokeAsync = async () => {
+            await fetchJoke();
+        };
+        
+        fetchJokeAsync();
+
+        // Cleanup sound when the component unmounts
+        return () => {
+            if (sound) {
+                sound.unloadAsync();
+                console.log('Unloaded sound');
+            }
+        };
     }, []);
 
     return (
