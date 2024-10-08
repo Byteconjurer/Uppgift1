@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { Video, ResizeMode } from 'expo-av';
 import { useIsFocused } from '@react-navigation/native';
@@ -6,14 +6,12 @@ import { useIsFocused } from '@react-navigation/native';
 export default function App() {
   const video = useRef(null);
   const isFocused = useIsFocused();
-  const [isLoading, setIsLoading] = useState(true); // State to track loading status
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Function to show text when video is loading
   const handleLoadStart = () => {
     setIsLoading(true);
   };
 
-  // Function to hide text when video is ready
   const handleReadyForDisplay = () => {
     setIsLoading(false);
   };
